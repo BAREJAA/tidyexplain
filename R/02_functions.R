@@ -88,6 +88,25 @@ plot_data <- function(x, title = "") {
     guides(fill = FALSE)
 }
 
+plot_data_small_title <- function(x, title = "") {
+  if (!"alpha" %in% colnames(x)) x$alpha <- 1
+  if (!".text_color" %in% colnames(x)) x$`.text_color` <- "white"
+  if (!".text_size" %in% colnames(x)) x$`.text_size` <- 12
+  ggplot(x) +
+    aes(.x, .y, fill = color, label = value) +
+    geom_tile(aes(alpha = alpha), width = 0.9, height = 0.9) +
+    geom_text(aes(x = .x, color = .text_color, size = .text_size), hjust = 0.5, family = "Fira Sans") +
+    scale_fill_identity() +
+    scale_alpha_identity() +
+    scale_color_identity() +
+    scale_size_identity() +
+    coord_equal() +
+    ggtitle(title) +
+    theme_void() +
+    theme(plot.title = element_text(family = "Fira Mono", hjust = 0.5, size = 16)) +
+    guides(fill = FALSE)
+}
+
 animate_plot <- function(x, transition_length = 2, state_length = 1) {
   x +
     transition_states(frame, transition_length, state_length) +

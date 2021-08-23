@@ -21,6 +21,11 @@ plot_data_join <- function(x, title = "", xlims = xlim(0.5, 5.5), ylims = ylim(-
     xlims + ylims
 }
 
+plot_data_join_small_title <- function(x, title = "", xlims = xlim(0.5, 5.5), ylims = ylim(-3.5, -0.5)) {
+  plot_data_small_title(x, title) +
+    xlims + ylims
+}
+
 # Data ----
 x <- data_frame(
   id = 1:3,
