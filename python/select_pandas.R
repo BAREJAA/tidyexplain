@@ -70,4 +70,4 @@ select_df %>%
   ease_aes("sine-in-out") -> select_anim
 
 select_anim <- animate(select_anim)
-anim_save(here::here("images", "select-pandas.gif"), select_anim)
+anim_save(here::here("images", "select-multiple-pandas.gif"), select_anim)
