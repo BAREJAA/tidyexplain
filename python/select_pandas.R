@@ -61,7 +61,7 @@ select_df %>%
   scale_alpha_identity() +
   scale_color_identity() +
   scale_size_identity() +
-  ggtitle("df[['colA', 'colB']]") +
+  ggtitle("df[['colA', 'colC']]") +
   theme_void() +
   theme(plot.title = element_text(family = "Fira Mono", hjust = 0.5, size = 24)) +
   transition_states(frame, transition_length = 2, state_length = 1) +
